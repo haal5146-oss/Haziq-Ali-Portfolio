@@ -245,10 +245,30 @@ a { color: inherit; }
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: var(--s-4);
+  padding: var(--s-3);
 }
 
-.project-media--cover img { object-fit: cover; padding: 0; }
+
+.project-media--shot { border: 1px solid var(--line); }
+.project-media--shot img { object-fit: cover; object-position: top; padding: 0; }
+
+.project-media--soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--line);
+}
+
+.soon-mark {
+  font-family: var(--serif);
+  font-size: var(--t-title);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--muted);
+}
+
+.skill-row--soon .title,
+.skill-row--soon:hover .title { color: var(--ink-soft); }
 
 .project .title { margin-bottom: var(--s-3); }
 .project .title a { text-decoration: none; }
@@ -592,3 +612,8 @@ p.pending { display: block; height: auto; padding: var(--s-2) 0; }
 /* Short pages keep the footer at the bottom of the window. */
 body { display: flex; flex-direction: column; min-height: 100vh; }
 main { flex: 1 0 auto; }
+
+/* Supporting projects on the home page sit a step below the main work. */
+#projects .skill-row { padding: var(--s-3) 0; }
+#projects .skill-row .title { font-size: var(--t-heading); line-height: 1.2; }
+.rows li strong { font-weight: 500; color: var(--ink); }

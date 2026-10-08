@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Power BI · Haziq Ali</title>
-  <meta name="description" content="Power BI work by Haziq Ali: a star schema and nine business questions answered with interactive reports.">
+  <title>Retail Sales Analysis · Haziq Ali</title>
+  <meta name="description" content="Power BI work by Haziq Ali: a star schema and nine business questions answered with visualization reports.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap">
@@ -17,8 +17,8 @@
       <a href="index.html" class="site-name">Haziq Ali</a>
       <nav class="site-nav" aria-label="Primary">
         <ul>
+          <li><a href="analysis.html">Analysis</a></li>
           <li><a href="index.html#work">Work</a></li>
-          <li><a href="skills.html">Skills</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#resume">Resume</a></li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -30,8 +30,8 @@
   <main id="top">
 
     <section class="case-hero container">
-      <a href="skills.html" class="link">Back to all skills</a>
-      <p class="eyebrow">Skill · Business intelligence</p>
+      <a href="analysis.html" class="link">Back to all analysis</a>
+      <p class="eyebrow">Analysis · Power BI</p>
       <h1 class="display">Power BI</h1>
       <p class="lede">One retail sales dataset, modelled as a star schema, then used to answer nine business questions with visualization reports.</p>
     </section>
@@ -39,7 +39,7 @@
     <div class="container">
       <dl class="spec case-facts reveal">
         <div><dt>Context</dt><dd>INFO 3402, University of Colorado Boulder</dd></div>
-        <div><dt>Tool</dt><dd>Power BI Desktop</dd></div>
+        <div><dt>Tool</dt><dd>Power BI Service</dd></div>
         <div><dt>Data</dt><dd>factSales · dimProduct · dimCustomer · dimStore</dd></div>
       </dl>
 
@@ -48,14 +48,14 @@
         <ol class="contents">
           <li><a href="#prep"><span>00</span>Preparing the data</a></li>
           <li><a href="#q1"><span>01</span>The star schema</a></li>
-          <li><a href="#q2"><span>02</span>What are our top selling products by volume per category?</a></li>
-          <li><a href="#q3"><span>03</span>What are our top selling products by sales revenue?</a></li>
-          <li><a href="#q4"><span>04</span>What are our top selling stores by sales revenue?</a></li>
-          <li><a href="#q5"><span>05</span>What are the most profitable product categories?</a></li>
+          <li><a href="#q2"><span>02</span>What is our top selling product by volume per category?</a></li>
+          <li><a href="#q3"><span>03</span>What is our top selling product by sales revenue?</a></li>
+          <li><a href="#q4"><span>04</span>What is our top selling store by sales revenue?</a></li>
+          <li><a href="#q5"><span>05</span>What is the most profitable product category?</a></li>
           <li><a href="#q6"><span>06</span>Who are our repeat customers, and what do they buy?</a></li>
           <li><a href="#q7"><span>07</span>How long do online customers wait for delivery?</a></li>
           <li><a href="#q8"><span>08</span>How have monthly sales and profit changed from 2021 to 2024?</a></li>
-          <li><a href="#q9"><span>09</span>Which age groups spend the most, and what product categories do they buy?</a></li>
+          <li><a href="#q9"><span>09</span>Which age groups spend the most, and what product categories do they buy the most?</a></li>
           <li><a href="#q10"><span>10</span>Which genders spend the most, and where do they live?</a></li>
         </ol>
       </nav>
@@ -94,9 +94,9 @@
       <section id="q2" class="case-block reveal">
         <p class="eyebrow">02 · Products</p>
         <div>
-          <h2 class="heading">What are our top selling products by volume per category?</h2>
+          <h2 class="heading">What is our top selling product by volume per category?</h2>
           <div class="media-stack">
-            <div class="video" data-youtube="W-0v7cB_ENI" data-title="What are our top selling products by volume per category"><a class="pending" href="https://youtu.be/W-0v7cB_ENI" target="_blank" rel="noopener">Watch on YouTube</a></div>
+            <div class="video" data-youtube="W-0v7cB_ENI" data-title="What is our top selling product by volume per category"><a class="pending" href="https://youtu.be/W-0v7cB_ENI" target="_blank" rel="noopener">Watch on YouTube</a></div>
             <!-- Screenshots: save into powerbi/ and uncomment.
             <div class="shots">
               <figure class="shot">
@@ -116,7 +116,7 @@
       <section id="q3" class="case-block reveal">
         <p class="eyebrow">03 · Products</p>
         <div>
-          <h2 class="heading">What are our top selling products by sales revenue?</h2>
+          <h2 class="heading">What is our top selling product by sales revenue?</h2>
           <div class="media-stack">
             <div class="shots">
               <figure class="shot">
@@ -135,7 +135,7 @@
       <section id="q4" class="case-block reveal">
         <p class="eyebrow">04 · Stores</p>
         <div>
-          <h2 class="heading">What are our top selling stores by sales revenue?</h2>
+          <h2 class="heading">What is our top selling store by sales revenue?</h2>
           <div class="media-stack">
             <div class="shots">
               <figure class="shot">
@@ -154,7 +154,7 @@
       <section id="q5" class="case-block reveal">
         <p class="eyebrow">05 · Categories</p>
         <div>
-          <h2 class="heading">What are the most profitable product categories?</h2>
+          <h2 class="heading">What is the most profitable product category?</h2>
           <div class="media-stack">
             <div class="shots">
               <figure class="shot">
@@ -233,7 +233,7 @@
       <section id="q9" class="case-block reveal">
         <p class="eyebrow">09 · Demographics</p>
         <div>
-          <h2 class="heading">Which age groups spend the most, and what product categories do they buy?</h2>
+          <h2 class="heading">Which age groups spend the most, and what product categories do they buy the most?</h2>
           <div class="media-stack">
             <div class="shots">
               <figure class="shot">
@@ -271,9 +271,9 @@
 
     <section class="case-next">
       <div class="container">
-        <a href="skills.html">
+        <a href="analysis.html">
           <p class="eyebrow">Back to</p>
-          <p class="title">All skills</p>
+          <p class="title">All analysis</p>
         </a>
       </div>
     </section>
