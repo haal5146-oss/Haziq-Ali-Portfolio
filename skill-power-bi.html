@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power BI · Haziq Ali</title>
+  <meta name="description" content="Power BI work by Haziq Ali: a star schema and nine business questions answered with interactive reports.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-name">Haziq Ali</a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="case-hero container">
+      <a href="skills.html" class="link">Back to all skills</a>
+      <p class="eyebrow">Skill · Business intelligence</p>
+      <h1 class="display">Power BI</h1>
+      <p class="lede">One retail sales dataset, modelled as a star schema, then used to answer nine business questions with visualization reports.</p>
+    </section>
+
+    <div class="container">
+      <dl class="spec case-facts reveal">
+        <div><dt>Context</dt><dd>INFO 3402, University of Colorado Boulder</dd></div>
+        <div><dt>Tool</dt><dd>Power BI Desktop</dd></div>
+        <div><dt>Data</dt><dd>factSales · dimProduct · dimCustomer · dimStore</dd></div>
+      </dl>
+
+      <nav class="case-block reveal" aria-label="Contents">
+        <p class="eyebrow">Contents</p>
+        <ol class="contents">
+          <li><a href="#prep"><span>00</span>Preparing the data</a></li>
+          <li><a href="#q1"><span>01</span>The star schema</a></li>
+          <li><a href="#q2"><span>02</span>What are our top selling products by volume per category?</a></li>
+          <li><a href="#q3"><span>03</span>What are our top selling products by sales revenue?</a></li>
+          <li><a href="#q4"><span>04</span>What are our top selling stores by sales revenue?</a></li>
+          <li><a href="#q5"><span>05</span>What are the most profitable product categories?</a></li>
+          <li><a href="#q6"><span>06</span>Who are our repeat customers, and what do they buy?</a></li>
+          <li><a href="#q7"><span>07</span>How long do online customers wait for delivery?</a></li>
+          <li><a href="#q8"><span>08</span>How have monthly sales and profit changed from 2021 to 2024?</a></li>
+          <li><a href="#q9"><span>09</span>Which age groups spend the most, and what product categories do they buy?</a></li>
+          <li><a href="#q10"><span>10</span>Which genders spend the most, and where do they live?</a></li>
+        </ol>
+      </nav>
+
+      <section id="prep" class="case-block reveal">
+        <p class="eyebrow">00 · Preparation</p>
+        <div>
+          <h2 class="heading">Preparing the data</h2>
+          <dl class="spec">
+            <div><dt>Currencies</dt><dd>Sales were recorded in several currencies, so adding them together directly would have mixed dollars, euros, and pounds. Each sale includes an exchange rate (local currency per US dollar), so I built a Revenue measure in DAX that divides each line's net price by its exchange rate before summing. Every revenue and profit figure in this report is in US dollars.</dd></div>
+            <div><dt>Online vs store</dt><dd>The online store generated about $4M in revenue, while the top physical store brought in about $136K, so including it would have flattened every store comparison. On the store ranking page, I excluded the online store with a filter to compare physical locations fairly. I kept online sales everywhere else, since they're real revenue for products, categories, and customers.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q1" class="case-block reveal">
+        <p class="eyebrow">01 · Data model</p>
+        <div>
+          <h2 class="heading">The star schema</h2>
+          <div class="media-stack">
+            <figure class="shot">
+              <a href="powerbi/01-star-schema.png" target="_blank" rel="noopener"><img src="powerbi/01-star-schema.png" alt="Power BI model view: factSales at the centre, joined one to many from dimProduct, dimStore and dimCustomer on ProductKey, StoreKey and CustomerKey" loading="lazy"></a>
+              <figcaption>Model view in Power BI · one to many from each dimension into factSales</figcaption>
+            </figure>
+          </div>
+          <dl class="spec">
+            <div><dt>factSales</dt><dd>At the center of the star schema, factSales records every sale, each row in this table is one line of a customer's order, it is identified by OrderKey, and holds measurable numbers, such as Quantity, UnitPrice, NetPrice, UnitCost, and ExchangeRate. To grasp a full breakdown of sales, it utilizes three foreign keys, which are ProductKey, StoreKey, and CustomerKey. Each foreign key is connected to the table that describes it, in respective order dimProduct, dimStore, and dimCustomer.</dd></div>
+            <div><dt>dimProduct</dt><dd>This table describes the product, each row in this table is a product that appears once and is identified by ProductKey. This common identifier allows dimProduct to be linked to factSales. dimProduct includes descriptive fields which include ProductName, Brand, Manufacturer, Color, and Weight, and products are grouped by CategoryName and SubCategoryName. Each product is listed once in dimProduct, but it can be sold many times in factSales. This one-to-many link is what lets us total up sales for each product.</dd></div>
+            <div><dt>dimStore</dt><dd>This describes each store in the business, each row in this table is a store that appears once, that is identified by StoreKey. This common identifier allows dimStore to be linked to factSales. It includes the store's Description, location (State, CountryName), size (SquareMeters), and operating details (OpenDate, CloseDate, Status). Each store is listed once in dimStore, but it can have many sales in factSales. This one-to-many link is what lets us total up sales for each store.</dd></div>
+            <div><dt>dimCustomer</dt><dd>This describes who the customer is, each row in this table is a customer who appears once that is identified by CustomerKey. This common identifier allows dimCustomer to be linked to factSales. It includes personal details of the customer such as GivenName, Surname, Gender, Age, Birthday, Occupation and their location. Each customer is listed once in dimCustomer, but they can make many purchases in factSales. This one-to-many link is what lets us total up sales for each customer.</dd></div>
+            <div><dt>Together</dt><dd>Filters flow from the dimension tables into factSales. For example, selecting a product category or a customer's gender narrows down which sales rows are totaled in a visual.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q2" class="case-block reveal">
+        <p class="eyebrow">02 · Products</p>
+        <div>
+          <h2 class="heading">What are our top selling products by volume per category?</h2>
+          <div class="media-stack">
+            <div class="video" data-youtube="W-0v7cB_ENI" data-title="What are our top selling products by volume per category"><a class="pending" href="https://youtu.be/W-0v7cB_ENI" target="_blank" rel="noopener">Watch on YouTube</a></div>
+            <!-- Screenshots: save into powerbi/ and uncomment.
+            <div class="shots">
+              <figure class="shot">
+                <a href="powerbi/02-a.png" target="_blank" rel="noopener"><img src="powerbi/02-a.png" alt="Describe what the chart shows" loading="lazy"></a>
+                <figcaption>What this view is filtered to</figcaption>
+              </figure>
+            </div>
+            -->
+          </div>
+          <dl class="spec">
+            <div><dt>Finding</dt><dd class="pending">Write-up in progress</dd></div>
+            <div><dt>Built with</dt><dd class="pending">Write-up in progress</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q3" class="case-block reveal">
+        <p class="eyebrow">03 · Products</p>
+        <div>
+          <h2 class="heading">What are our top selling products by sales revenue?</h2>
+          <div class="media-stack">
+            <div class="shots">
+              <figure class="shot">
+                <a href="powerbi/03-revenue.png?v=3" target="_blank" rel="noopener"><img src="powerbi/03-revenue.png?v=3" alt="Bar chart of the top five products by sales revenue. Adventure Works Desktop PC2.33 XD233 Silver leads at $99K, highlighted in orange, followed by the 52 inch LCD HDTV X590 Silver at $80K and Black at $79K, then the Desktop PC2.33 XD233 White at $68K and Black at $57K" loading="lazy"></a>
+                <figcaption>Top five products by sales revenue</figcaption>
+              </figure>
+            </div>
+          </div>
+          <dl class="spec">
+            <div><dt>Finding</dt><dd class="pending">Write-up in progress</dd></div>
+            <div><dt>Built with</dt><dd class="pending">Write-up in progress</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q4" class="case-block reveal">
+        <p class="eyebrow">04 · Stores</p>
+        <div>
+          <h2 class="heading">What are our top selling stores by sales revenue?</h2>
+          <div class="media-stack">
+            <div class="shots">
+              <figure class="shot">
+                <a href="powerbi/04-stores.png" target="_blank" rel="noopener"><img src="powerbi/04-stores.png" alt="Bar chart of the top five stores by sales revenue. Contoso Store Nebraska leads at $136K, highlighted in orange, followed by South Carolina at $131K, Maine at $122K, Sachsen-Anhalt at $112K and Dungannon and South Tyrone at $100K" loading="lazy"></a>
+                <figcaption>Top five stores by sales revenue</figcaption>
+              </figure>
+            </div>
+          </div>
+          <dl class="spec">
+            <div><dt>Finding</dt><dd class="pending">Write-up in progress</dd></div>
+            <div><dt>Built with</dt><dd class="pending">Write-up in progress</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q5" class="case-block reveal">
+        <p class="eyebrow">05 · Categories</p>
+        <div>
+          <h2 class="heading">What are the most profitable product categories?</h2>
+          <div class="media-stack">
+            <div class="shots">
+              <figure class="shot">
+                <a href="powerbi/05-profit-category.png" target="_blank" rel="noopener"><img src="powerbi/05-profit-category.png" alt="Bar chart of profit by product category. Computers lead at $1.57M, highlighted in orange, followed by Home Appliances at $0.69M, Cell phones at $0.67M and TV and Video at $0.54M. Music, Movies and Audio Books, Cameras and camcorders, Audio, and Games and Toys trail between $0.27M and $0.03M" loading="lazy"></a>
+                <figcaption>Profit by product category</figcaption>
+              </figure>
+            </div>
+          </div>
+          <dl class="spec">
+            <div><dt>Finding</dt><dd class="pending">Write-up in progress</dd></div>
+            <div><dt>Built with</dt><dd class="pending">Write-up in progress</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q6" class="case-block reveal">
+        <p class="eyebrow">06 · Customers</p>
+        <div>
+          <h2 class="heading">Who are our repeat customers, and what do they buy?</h2>
+          <div class="media-stack">
+            <div class="video" data-youtube="ttUiZ0xffFg" data-title="Who are our repeat customers, and what do they buy"><a class="pending" href="https://youtu.be/ttUiZ0xffFg" target="_blank" rel="noopener">Watch on YouTube</a></div>
+            <!-- Screenshots: save into powerbi/ and uncomment.
+            <div class="shots">
+              <figure class="shot">
+                <a href="powerbi/06-a.png" target="_blank" rel="noopener"><img src="powerbi/06-a.png" alt="Describe what the chart shows" loading="lazy"></a>
+                <figcaption>What this view is filtered to</figcaption>
+              </figure>
+            </div>
+            -->
+          </div>
+          <dl class="spec">
+            <div><dt>Finding</dt><dd class="pending">Write-up in progress</dd></div>
+            <div><dt>Built with</dt><dd class="pending">Write-up in progress</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q7" class="case-block reveal">
+        <p class="eyebrow">07 · Delivery</p>
+        <div>
+          <h2 class="heading">How long do online customers wait for delivery?</h2>
+          <div class="media-stack">
+            <div class="shots">
+              <figure class="shot">
+                <a href="powerbi/07-delivery.png?v=2" target="_blank" rel="noopener"><img src="powerbi/07-delivery.png?v=2" alt="Bar chart of online orders by days to deliver, from 1 to 8 days. Three days is the most common at 480 orders, highlighted in orange, with 454 at two days and 309 at four days, tailing off to 4 orders at eight days. A card shows average delivery of 3.03 days for online customers" loading="lazy"></a>
+                <figcaption>Online orders by days to deliver · filtered to the online store</figcaption>
+              </figure>
+            </div>
+          </div>
+          <dl class="spec">
+            <div><dt>Finding</dt><dd class="pending">Write-up in progress</dd></div>
+            <div><dt>Built with</dt><dd class="pending">Write-up in progress</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q8" class="case-block reveal">
+        <p class="eyebrow">08 · Trends</p>
+        <div>
+          <h2 class="heading">How have monthly sales and profit changed from 2021 to 2024?</h2>
+          <div class="media-stack">
+            <div class="shots">
+              <figure class="shot">
+                <a href="powerbi/08-monthly-trend.png" target="_blank" rel="noopener"><img src="powerbi/08-monthly-trend.png" alt="Line chart of monthly revenue and profit from mid 2021 to early 2024. Revenue peaks above $0.4M in early 2022 and early 2023, with sharp drops in spring 2022 and spring 2023. Profit tracks revenue at roughly half its level throughout" loading="lazy"></a>
+                <figcaption>Monthly revenue and profit · 2021 to 2024</figcaption>
+              </figure>
+            </div>
+          </div>
+          <dl class="spec">
+            <div><dt>Finding</dt><dd class="pending">Write-up in progress</dd></div>
+            <div><dt>Built with</dt><dd class="pending">Write-up in progress</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q9" class="case-block reveal">
+        <p class="eyebrow">09 · Demographics</p>
+        <div>
+          <h2 class="heading">Which age groups spend the most, and what product categories do they buy?</h2>
+          <div class="media-stack">
+            <div class="shots">
+              <figure class="shot">
+                <a href="powerbi/09-age-groups.png" target="_blank" rel="noopener"><img src="powerbi/09-age-groups.png" alt="Two bar charts. Left: total spend by age group, with customers 65 and over leading at $2.23M, highlighted in orange, followed by 35 to 44 at $1.25M and 24 and under lowest at $0.59M. Right: product categories bought by customers 65 and over, led by Cell phones at 2,000 units and Computers at 1,766" loading="lazy"></a>
+                <figcaption>Spend by age group · categories bought by customers 65 and over</figcaption>
+              </figure>
+            </div>
+          </div>
+          <dl class="spec">
+            <div><dt>Finding</dt><dd class="pending">Write-up in progress</dd></div>
+            <div><dt>Built with</dt><dd class="pending">Write-up in progress</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="q10" class="case-block reveal">
+        <p class="eyebrow">10 · Demographics</p>
+        <div>
+          <h2 class="heading">Which genders spend the most, and where do they live?</h2>
+          <div class="media-stack">
+            <div class="shots">
+              <figure class="shot">
+                <a href="powerbi/10-gender.png" target="_blank" rel="noopener"><img src="powerbi/10-gender.png" alt="Two bar charts. Left: total spend by gender, with male customers at $3.8M, highlighted in orange, and female customers at $3.5M. Right: countries with male spenders, led by the United States at 6.6K, then Germany at 1.5K, Canada at 1.4K and the United Kingdom at 1.1K" loading="lazy"></a>
+                <figcaption>Spend by gender · countries with male spenders</figcaption>
+              </figure>
+            </div>
+          </div>
+          <dl class="spec">
+            <div><dt>Finding</dt><dd class="pending">Write-up in progress</dd></div>
+            <div><dt>Built with</dt><dd class="pending">Write-up in progress</dd></div>
+          </dl>
+        </div>
+      </section>
+    </div>
+
+    <section class="case-next">
+      <div class="container">
+        <a href="skills.html">
+          <p class="eyebrow">Back to</p>
+          <p class="title">All skills</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="dark">
+    <footer class="site-footer">
+      <div class="container">
+        <span>© 2026 Haziq Ali</span>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

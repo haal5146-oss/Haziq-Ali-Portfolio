@@ -3,133 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haziq Ali — Portfolio</title>
+  <title>Haziq Ali · Portfolio</title>
+  <meta name="description" content="Haziq Ali, Information Science at CU Boulder. Product work from user research to working code.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#home" class="nav-logo">Haziq Ali</a>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Connect</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section id="home">
-    <div class="blob"></div>
-    <div class="hero-content">
-      <p class="hero-welcome">Information Science · CU Boulder</p>
-      <h1 class="hero-name">Haziq Ali</h1>
-      <a href="Ali_Haziq_Resume.pdf" download class="btn-outline-white">Download My Resume</a>
+  <header class="site-header">
+    <div class="container">
+      <a href="#top" class="site-name">Haziq Ali</a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <p class="projects-header">Development Projects</p>
+  <main id="top">
 
-    <!-- Project 01 -->
-    <div class="project-row">
-      <div class="project-thumb">
-        <img src="disco-logo.png" alt="Discover Stage">
+    <section class="hero container">
+      <p class="eyebrow">Information Science · University of Colorado Boulder</p>
+      <h1 class="display">Haziq Ali</h1>
+      <p class="lede">A builder driven by real-world problems, data, and people. I take products from user research to working code.</p>
+      <div class="actions">
+        <a href="Ali_Haziq_Resume.pdf" download class="btn">Download resume</a>
+        <a href="#work" class="link">See the work</a>
       </div>
-      <div class="project-info">
-        <span class="proj-num">Project 01 · Senior Capstone</span>
-        <h2 class="proj-title">Discover Stage</h2>
-        <p class="proj-desc">
-          A mobile app connecting college students with niche, local artists performing in their town — bridging the gap between underground talent and curious fans.
-        </p>
-        <div class="proj-meta">
-          <p><strong>Goal:</strong> Connect fans with emerging artists performing in college towns</p>
-          <p><strong>Contribution:</strong> Originated concept, tested 15 users, analyzed feedback, coded alongside team of 3</p>
-          <p><strong>Skills:</strong> React Native · FastAPI · SQLite · User Research · Market Validation</p>
+    </section>
+
+    <section id="work" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="title">Two products, both built from user research.</h2>
+        </header>
+
+        <article class="project reveal">
+          <a href="project-discover-stage.html" class="project-media" tabindex="-1" aria-hidden="true">
+            <img src="disco-logo.png" alt="">
+          </a>
+          <div>
+            <p class="eyebrow">01 · Senior capstone · 2025 to 2026</p>
+            <h3 class="title"><a href="project-discover-stage.html">Discover Stage</a></h3>
+            <p class="prose">A mobile app connecting college students with niche, local artists performing in their town. It bridges the gap between underground talent and curious fans.</p>
+            <dl class="spec">
+              <div><dt>Goal</dt><dd>Connect fans with emerging artists performing in college towns</dd></div>
+              <div><dt>My role</dt><dd>Originated the concept, tested with 15 users, analyzed feedback, coded alongside a team of 3</dd></div>
+              <div><dt>Stack</dt><dd>React Native · FastAPI · SQLite</dd></div>
+            </dl>
+            <a href="project-discover-stage.html" class="link">Read the case study</a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <a href="project-student-quest.html" class="project-media project-media--cover" tabindex="-1" aria-hidden="true">
+            <img src="cuquest-logo.jpeg" alt="">
+          </a>
+          <div>
+            <p class="eyebrow">02 · Software engineering · 2024 to 2025</p>
+            <h3 class="title"><a href="project-student-quest.html">Student Quest</a></h3>
+            <p class="prose">A unified student hub for social connection, campus services, and academic needs. Designed from scratch using real feedback from 20 CU Boulder students.</p>
+            <dl class="spec">
+              <div><dt>Goal</dt><dd>One platform for every student need on campus</dd></div>
+              <div><dt>My role</dt><dd>Led the concept, surveyed 20 students, oversaw a 5 person team, built the entire front end</dd></div>
+              <div><dt>Stack</dt><dd>HTML · CSS · JavaScript · FastAPI · SQL</dd></div>
+            </dl>
+            <a href="project-student-quest.html" class="link">Read the case study</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Skills</p>
+          <h2 class="title">Shown, not listed.</h2>
+        </header>
+        <ul class="skill-list reveal">
+          <li>
+            <a href="skill-power-bi.html" class="skill-row">
+              <h3 class="title">Power BI</h3>
+              <p class="prose">Star schema modelling and nine business questions answered with interactive reports, slicers and cross filtering.</p>
+              <p class="eyebrow">10 views · Video walkthroughs</p>
+            </a>
+          </li>
+        </ul>
+        <a href="skills.html" class="link">All skills</a>
+      </div>
+    </section>
+
+    <section id="about" class="section section--surface">
+      <div class="container">
+        <div class="about-grid reveal">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2 class="title">Research first, then the build.</h2>
+          </div>
+          <dl class="spec">
+            <div><dt>Technical</dt><dd>HTML · CSS · JavaScript · React · React Native · FastAPI · SQL · SQLite · Data analysis</dd></div>
+            <div><dt>Professional</dt><dd>Team leadership · Project management · Product strategy · Market research · Cross-functional collaboration</dd></div>
+            <div><dt>Education</dt><dd>BS Information Science, University of Colorado Boulder</dd></div>
+            <div><dt>Based in</dt><dd>Thornton, Colorado</dd></div>
+          </dl>
         </div>
-        <a href="project-discover-stage.html" class="btn-outline-white">See Project →</a>
-      </div>
-    </div>
 
-    <hr class="proj-divider">
-
-    <!-- Project 02 -->
-    <div class="project-row">
-      <div class="project-thumb">
-        <img src="cuquest-logo.jpeg" alt="Student Quest">
-      </div>
-      <div class="project-info">
-        <span class="proj-num">Project 02 · Software Engineering</span>
-        <h2 class="proj-title">Student Quest</h2>
-        <p class="proj-desc">
-          A unified student hub for social connection, campus services, and academic needs — designed from scratch using real feedback from 20 CU Boulder students.
-        </p>
-        <div class="proj-meta">
-          <p><strong>Goal:</strong> Create a one-stop platform for every student need on campus</p>
-          <p><strong>Contribution:</strong> Led concept, surveyed 20 students, oversaw 5-person team, built entire front end</p>
-          <p><strong>Skills:</strong> HTML · CSS · JS · FastAPI · SQL · Team Leadership · Product Strategy</p>
+        <div class="stats reveal">
+          <div class="stat">
+            <span class="stat-num">200</span>
+            <span class="stat-label">Clients advised</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">2</span>
+            <span class="stat-label">Apps shipped</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">35+</span>
+            <span class="stat-label">Users tested</span>
+          </div>
         </div>
-        <a href="project-student-quest.html" class="btn-outline-white">See Project →</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2 class="about-headline">
-      <span class="accent">B</span>uilder driven by real-world problems,<br>data, and people.
-    </h2>
-
-    <div class="stats-row">
-      <div class="stat-block">
-        <span class="stat-num">200</span>
-        <span class="stat-lbl">Clients<br>Advised</span>
+    <section id="resume" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Resume</p>
+          <h2 class="title">Experience and education.</h2>
+        </header>
+        <iframe class="resume-frame" src="Ali_Haziq_Resume.pdf" title="Haziq Ali resume"></iframe>
+        <div class="actions">
+          <a href="Ali_Haziq_Resume.pdf" download class="btn">Download PDF</a>
+          <a href="Ali_Haziq_Resume.pdf" target="_blank" rel="noopener" class="link">Open in a new tab</a>
+        </div>
       </div>
-      <div class="stat-block">
-        <span class="stat-num">2</span>
-        <span class="stat-lbl">Apps<br>Shipped</span>
+    </section>
+
+  </main>
+
+  <div class="dark">
+    <section id="contact" class="section contact">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h2 class="title">Get in touch.</h2>
+        <dl class="spec">
+          <div><dt>Email</dt><dd><a href="mailto:ali.haziq@outlook.com">ali.haziq@outlook.com</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+17204728094">720 472 8094</a></dd></div>
+          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/haziq1stbond" target="_blank" rel="noopener">in/haziq1stbond</a></dd></div>
+          <div><dt>Location</dt><dd>Denver and Boulder, Colorado</dd></div>
+        </dl>
       </div>
-      <div class="stat-block">
-        <span class="stat-num">35+</span>
-        <span class="stat-lbl">Users<br>Tested</span>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© 2026 Haziq Ali</span>
+        <a href="#top">Back to top</a>
       </div>
-    </div>
+    </footer>
+  </div>
 
-    <div class="skills-block">
-      <p><strong>Technical:</strong> HTML · CSS · JavaScript · React · FastAPI · SQL · SQLite · Data Analysis · Market Validation</p>
-      <p><strong>Professional:</strong> Team Leadership · Project Management · Product Strategy · Market Research · Problem Solving · Cross-Functional Collaboration</p>
-      <p><strong>Education:</strong> BS Information Science · University of Colorado Boulder</p>
-      <p><strong>Location:</strong> Thornton, CO</p>
-    </div>
-  </section>
-
-  <!-- RESUME -->
-  <section id="resume">
-    <h2 class="resume-section-title">Haziq Ali's Resume</h2>
-    <div class="resume-wrap">
-      <iframe src="Ali_Haziq_Resume.pdf" title="Haziq Ali Resume"></iframe>
-      <div class="resume-dl">
-        <a href="Ali_Haziq_Resume.pdf" download class="btn-outline-dark">Download Resume PDF</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-info-line">
-      <a href="mailto:ali.haziq@outlook.com">ali.haziq@outlook.com</a>
-      <a href="tel:7204728094">720-472-8094</a>
-      <a href="#">Denver × Boulder</a>
-    </div>
-    <a href="https://www.linkedin.com/in/haziq1stbond" target="_blank" class="btn-outline-white">LinkedIn</a>
-  </section>
-
-  <footer>
-    <p>© 2026 Haziq Ali</p>
-  </footer>
-
+  <script src="main.js"></script>
 </body>
 </html>

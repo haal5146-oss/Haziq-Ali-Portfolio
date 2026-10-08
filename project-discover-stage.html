@@ -3,97 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discover Stage — Haziq Ali</title>
+  <title>Discover Stage · Haziq Ali</title>
+  <meta name="description" content="Discover Stage, a senior capstone mobile app connecting college students with local artists.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="index.html" class="nav-logo">Haziq Ali</a>
-    <ul class="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#resume">Resume</a></li>
-      <li><a href="index.html#contact">Connect</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-name">Haziq Ali</a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html#work">Work</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <!-- HERO -->
-  <div class="detail-hero">
-    <div class="detail-pink-bar"></div>
-    <a href="index.html#projects" class="back-link">← Back to Projects</a>
-    <div class="detail-tag">Senior Capstone · 2025–2026</div>
-    <h1 class="detail-title">Discover<br>Stage</h1>
-    <p class="detail-sub">Connecting college students with niche artists performing in their town — because great music shouldn't go unnoticed.</p>
-  </div>
+  <main id="top">
 
-  <!-- CONTENT -->
-  <div class="detail-content">
-    <div class="detail-sections">
+    <section class="case-hero container">
+      <a href="index.html#work" class="link">Back to all work</a>
+      <p class="eyebrow">01 · Senior capstone · 2025 to 2026</p>
+      <h1 class="display">Discover Stage</h1>
+      <p class="lede">Connecting college students with niche artists performing in their town, because great music should not go unnoticed.</p>
+    </section>
 
-      <div class="detail-block">
-        <div class="detail-block-label">The Goal</div>
-        <div class="detail-block-content">
-          <h2>What problem were we solving?</h2>
-          <p>Niche and emerging artists performing in college towns rarely get discovered. They play small venues, build real talent, and never reach the students who would love their music — because there's no bridge between them. Discover Stage set out to be that bridge: a mobile app where local artists post events and fans discover live music right in their college town.</p>
+    <div class="container">
+      <figure class="case-figure reveal">
+        <img src="disco-logo.png" alt="Discover Stage app logo">
+      </figure>
+
+      <dl class="spec case-facts reveal">
+        <div><dt>Context</dt><dd>Senior capstone, University of Colorado Boulder</dd></div>
+        <div><dt>Team</dt><dd>4 people</dd></div>
+        <div><dt>Research</dt><dd>15 users across multiple feedback sessions</dd></div>
+        <div><dt>Stack</dt><dd>React Native · FastAPI · SQLite</dd></div>
+      </dl>
+
+      <div class="case-block reveal">
+        <p class="eyebrow">The goal</p>
+        <div>
+          <h2 class="heading">What problem were we solving?</h2>
+          <p class="prose">Niche and emerging artists performing in college towns rarely get discovered. They play small venues, build real talent, and never reach the students who would love their music, because there is no bridge between them.</p>
+          <p class="prose">Discover Stage set out to be that bridge: a mobile app where local artists post events and fans discover live music right in their college town.</p>
         </div>
       </div>
 
-      <div class="detail-block">
-        <div class="detail-block-label">My Contribution</div>
-        <div class="detail-block-content">
-          <h2>What did I build?</h2>
-          <ul>
-            <li>Originated the core app concept — identified the gap in artist-fan discovery at the college level</li>
-            <li>Conducted structured user testing with 15 real users across multiple feedback sessions</li>
+      <div class="case-block reveal">
+        <p class="eyebrow">My contribution</p>
+        <div>
+          <h2 class="heading">What did I build?</h2>
+          <ul class="rows">
+            <li>Originated the core app concept by identifying the gap in artist and fan discovery at the college level</li>
+            <li>Ran structured user testing with 15 real users across multiple feedback sessions</li>
             <li>Analyzed results and translated insights into feature priorities and product decisions</li>
-            <li>Contributed directly to the codebase alongside 3 peers — front-end components and app logic</li>
-            <li>Applied market validation thinking before committing to any development scope</li>
+            <li>Contributed directly to the codebase alongside 3 peers, on front end components and app logic</li>
+            <li>Applied market validation before committing to any development scope</li>
           </ul>
         </div>
       </div>
 
-      <div class="detail-block">
-        <div class="detail-block-label">Skills Gained</div>
-        <div class="detail-block-content">
-          <h2>What did this teach me?</h2>
-          <div class="skills-tags">
-            <span class="stag">User Research</span>
-            <span class="stag">Product Strategy</span>
-            <span class="stag">React Native</span>
-            <span class="stag">FastAPI</span>
-            <span class="stag">SQLite</span>
-            <span class="stag">Market Validation</span>
-            <span class="stag">Feedback Analysis</span>
-            <span class="stag">Team Collaboration</span>
-            <span class="stag">Agile Iteration</span>
-          </div>
+      <div class="case-block reveal">
+        <p class="eyebrow">Skills gained</p>
+        <div>
+          <h2 class="heading">What did this teach me?</h2>
+          <p class="skills-line">User research · Product strategy · React Native · FastAPI · SQLite · Market validation · Feedback analysis · Team collaboration · Agile iteration</p>
         </div>
       </div>
 
-      <div class="detail-block">
-        <div class="detail-block-label">Visuals</div>
-        <div class="detail-block-content">
-          <h2>App Logo</h2>
-          <div class="single-logo">
-            <img src="disco-logo.png" alt="Discover Stage Logo">
-          </div>
-          <a href="https://github.com/OB123229/discostage-dev" target="_blank" class="btn-outline-dark github-btn">↗ Link to GitHub</a>
+      <div class="case-block reveal">
+        <p class="eyebrow">Code</p>
+        <div>
+          <h2 class="heading">See the repository.</h2>
+          <a href="https://github.com/OB123229/discostage-dev" target="_blank" rel="noopener" class="link">View Discover Stage on GitHub</a>
         </div>
       </div>
-
     </div>
 
-    <div class="detail-back">
-      <a href="index.html#projects" class="btn-outline-dark">← Back to All Projects</a>
-    </div>
+    <section class="case-next">
+      <div class="container">
+        <a href="project-student-quest.html">
+          <p class="eyebrow">Next project</p>
+          <p class="title">Student Quest</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="dark">
+    <footer class="site-footer">
+      <div class="container">
+        <span>© 2026 Haziq Ali</span>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </footer>
   </div>
 
-  <footer>
-    <p>© 2026 Haziq Ali</p>
-  </footer>
-
+  <script src="main.js"></script>
 </body>
 </html>
