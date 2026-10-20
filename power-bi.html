@@ -18,7 +18,7 @@
       <nav class="site-nav" aria-label="Primary">
         <ul>
           <li><a href="analysis.html">Analysis</a></li>
-          <li><a href="index.html#work">Work</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#resume">Resume</a></li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -29,42 +29,101 @@
 
   <main id="top">
 
-    <section class="case-hero container">
+    <section class="case-hero case-hero--compact container">
       <a href="analysis.html" class="link">Back to all analysis</a>
-      <p class="eyebrow">Analysis · Power BI</p>
-      <h1 class="display">Power BI</h1>
-      <p class="lede">One retail sales dataset, modelled as a star schema, then used to answer nine business questions with visualization reports.</p>
+      <p class="eyebrow">Power BI · INFO 3402</p>
+      <h1 class="title">Retail sales and profit</h1>
+      <p class="lede">One retail sales dataset, modelled as a star schema, then used to answer nine business questions. Open any chart to see the finding behind it.</p>
+      <div class="actions">
+        <a href="#prep" class="btn-outline" data-modal="prep">Context and preparation</a>
+      </div>
     </section>
 
     <div class="container">
-      <dl class="spec case-facts reveal">
-        <div><dt>Context</dt><dd>INFO 3402, University of Colorado Boulder</dd></div>
-        <div><dt>Tool</dt><dd>Power BI Service</dd></div>
-        <div><dt>Data</dt><dd>factSales · dimProduct · dimCustomer · dimStore</dd></div>
-      </dl>
-
-      <nav class="case-block reveal" aria-label="Contents">
-        <p class="eyebrow">Contents</p>
-        <ol class="contents">
-          <li><a href="#prep"><span>00</span>Preparing the data</a></li>
-          <li><a href="#q1"><span>01</span>The star schema</a></li>
-          <li><a href="#q2"><span>02</span>What is our top selling product by volume per category?</a></li>
-          <li><a href="#q3"><span>03</span>What is our top selling product by sales revenue?</a></li>
-          <li><a href="#q4"><span>04</span>What is our top selling store by sales revenue?</a></li>
-          <li><a href="#q5"><span>05</span>What is the most profitable product category?</a></li>
-          <li><a href="#q6"><span>06</span>Who are our repeat customers, and what do they buy?</a></li>
-          <li><a href="#q7"><span>07</span>How long do online customers wait for delivery?</a></li>
-          <li><a href="#q8"><span>08</span>How have monthly sales and profit changed from 2021 to 2024?</a></li>
-          <li><a href="#q9"><span>09</span>Which age groups spend the most, and what product categories do they buy the most?</a></li>
-          <li><a href="#q10"><span>10</span>Which genders spend the most, and where do they live?</a></li>
+      <nav aria-label="Charts">
+        <ol class="chart-grid">
+          <li>
+            <a href="#q1" class="chart-tile" data-modal="q1">
+              <span class="chart-tile-media"><img src="powerbi/01-star-schema.png" alt="" loading="eager"></span>
+              <span class="chart-tile-num">01</span>
+              <span class="chart-tile-q">The star schema</span>
+            </a>
+          </li>
+          <li>
+            <a href="#q2" class="chart-tile" data-modal="q2">
+              <span class="chart-tile-media chart-tile-media--video"><img src="https://i.ytimg.com/vi/W-0v7cB_ENI/maxresdefault.jpg" alt="" loading="eager"></span>
+              <span class="chart-tile-num">02</span>
+              <span class="chart-tile-q">What is our top selling product by volume per category?</span>
+            </a>
+          </li>
+          <li>
+            <a href="#q3" class="chart-tile" data-modal="q3">
+              <span class="chart-tile-media"><img src="powerbi/03-revenue.png?v=3" alt="" loading="eager"></span>
+              <span class="chart-tile-num">03</span>
+              <span class="chart-tile-q">What is our top selling product by sales revenue?</span>
+            </a>
+          </li>
+          <li>
+            <a href="#q4" class="chart-tile" data-modal="q4">
+              <span class="chart-tile-media"><img src="powerbi/04-stores.png" alt="" loading="eager"></span>
+              <span class="chart-tile-num">04</span>
+              <span class="chart-tile-q">What is our top selling store by sales revenue?</span>
+            </a>
+          </li>
+          <li>
+            <a href="#q5" class="chart-tile" data-modal="q5">
+              <span class="chart-tile-media"><img src="powerbi/05-profit-category.png" alt="" loading="eager"></span>
+              <span class="chart-tile-num">05</span>
+              <span class="chart-tile-q">What is the most profitable product category?</span>
+            </a>
+          </li>
+          <li>
+            <a href="#q6" class="chart-tile" data-modal="q6">
+              <span class="chart-tile-media chart-tile-media--video"><img src="https://i.ytimg.com/vi/ttUiZ0xffFg/maxresdefault.jpg" alt="" loading="eager"></span>
+              <span class="chart-tile-num">06</span>
+              <span class="chart-tile-q">Who are our repeat customers, and what do they buy?</span>
+            </a>
+          </li>
+          <li>
+            <a href="#q7" class="chart-tile" data-modal="q7">
+              <span class="chart-tile-media"><img src="powerbi/07-delivery.png?v=3" alt="" loading="lazy"></span>
+              <span class="chart-tile-num">07</span>
+              <span class="chart-tile-q">How long do online customers wait for delivery?</span>
+            </a>
+          </li>
+          <li>
+            <a href="#q8" class="chart-tile" data-modal="q8">
+              <span class="chart-tile-media"><img src="powerbi/08-monthly-trend.png" alt="" loading="lazy"></span>
+              <span class="chart-tile-num">08</span>
+              <span class="chart-tile-q">How have monthly sales and profit changed from 2021 to 2024?</span>
+            </a>
+          </li>
+          <li>
+            <a href="#q9" class="chart-tile" data-modal="q9">
+              <span class="chart-tile-media"><img src="powerbi/09-age-groups.png" alt="" loading="lazy"></span>
+              <span class="chart-tile-num">09</span>
+              <span class="chart-tile-q">Which age groups spend the most, and what product categories do they buy the most?</span>
+            </a>
+          </li>
+          <li>
+            <a href="#q10" class="chart-tile" data-modal="q10">
+              <span class="chart-tile-media"><img src="powerbi/10-gender.png" alt="" loading="lazy"></span>
+              <span class="chart-tile-num">10</span>
+              <span class="chart-tile-q">Which genders spend the most, and where do they live?</span>
+            </a>
+          </li>
         </ol>
       </nav>
 
+      <div class="case-sections">
       <section id="prep" class="case-block reveal">
-        <p class="eyebrow">00 · Preparation</p>
+        <p class="eyebrow">00 · Context and preparation</p>
         <div>
-          <h2 class="heading">Preparing the data</h2>
+          <h2 class="heading">Context and preparation</h2>
           <dl class="spec">
+            <div><dt>Context</dt><dd>INFO 3402, University of Colorado Boulder</dd></div>
+            <div><dt>Tool</dt><dd>Power BI Service</dd></div>
+            <div><dt>Data</dt><dd>factSales · dimProduct · dimCustomer · dimStore</dd></div>
             <div><dt>Currencies</dt><dd>Sales were recorded in several currencies, so adding them together directly would have mixed dollars, euros, and pounds. Each sale includes an exchange rate (local currency per US dollar), so I built a Revenue measure in DAX that divides each line's net price by its exchange rate before summing. Every revenue and profit figure in this report is in US dollars.</dd></div>
             <div><dt>Online vs store</dt><dd>The online store generated about $4M in revenue, while the top physical store brought in about $136K, so including it would have flattened every store comparison. On the store ranking page, I excluded the online store with a filter to compare physical locations fairly. I kept online sales everywhere else, since they're real revenue for products, categories, and customers.</dd></div>
           </dl>
@@ -278,6 +337,7 @@
           </dl>
         </div>
       </section>
+      </div>
     </div>
 
     <section class="case-next">
@@ -299,6 +359,15 @@
       </div>
     </footer>
   </div>
+
+  <dialog class="case-modal" aria-label="Chart details">
+    <div class="case-modal-bar">
+      <button type="button" class="link" data-modal-prev>Previous</button>
+      <button type="button" class="link" data-modal-next>Next</button>
+      <button type="button" class="link case-modal-close" data-modal-close>Close</button>
+    </div>
+    <div class="case-modal-body"></div>
+  </dialog>
 
   <script src="main.js"></script>
 </body>

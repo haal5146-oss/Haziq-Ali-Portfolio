@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal projects · Haziq Ali</title>
+  <meta name="description" content="Websites Haziq Ali has designed and built.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-name">Haziq Ali</a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="analysis.html">Analysis</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="case-hero container">
+      <a href="index.html#projects" class="link">Back to projects</a>
+      <p class="eyebrow">Personal projects</p>
+      <h1 class="display">Websites</h1>
+      <p class="lede">Sites I've designed and built outside of class, from the storefront to the serverless functions behind it.</p>
+    </section>
+
+    <div class="container personal-projects">
+        <article class="project reveal">
+          <a href="https://koziloft.com" target="_blank" rel="noopener" class="project-media project-media--shot" tabindex="-1" aria-hidden="true">
+            <img src="sites/koziloft.png" alt="" loading="lazy">
+          </a>
+          <div>
+            <p class="eyebrow">Furniture store · 2026</p>
+            <h3 class="title"><a href="https://koziloft.com" target="_blank" rel="noopener">Kozi Loft</a></h3>
+            <p class="prose">An online store for solid wood tables, desks and chairs, with a dining set configurator, checkout on the page, and an admin panel for managing listings.</p>
+            <dl class="spec">
+              <div><dt>Stack</dt><dd>Eleventy · Netlify Functions · Stripe</dd></div>
+            </dl>
+            <a href="https://koziloft.com" target="_blank" rel="noopener" class="link">Visit koziloft.com</a>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <a href="https://1st-bond.com" target="_blank" rel="noopener" class="project-media project-media--shot" tabindex="-1" aria-hidden="true">
+            <img src="sites/1stbond.png" alt="" loading="lazy">
+          </a>
+          <div>
+            <p class="eyebrow">App website · 2026</p>
+            <h3 class="title"><a href="https://1st-bond.com" target="_blank" rel="noopener">1STBOND</a></h3>
+            <p class="prose">The website for an identity-verified meetup app, with product, pricing and account pages. Serverless functions handle the contact form with rate limiting and log sign-in events for security monitoring.</p>
+            <dl class="spec">
+              <div><dt>Stack</dt><dd>HTML · CSS · JavaScript · Netlify Functions · Supabase</dd></div>
+            </dl>
+            <a href="https://1st-bond.com" target="_blank" rel="noopener" class="link">Visit 1st-bond.com</a>
+          </div>
+        </article>
+    </div>
+
+  </main>
+
+  <div class="dark">
+    <footer class="site-footer">
+      <div class="container">
+        <span>© 2026 Haziq Ali</span>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

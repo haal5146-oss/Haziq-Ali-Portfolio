@@ -18,7 +18,7 @@
       <nav class="site-nav" aria-label="Primary">
         <ul>
           <li><a href="analysis.html">Analysis</a></li>
-          <li><a href="#work">Work</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#resume">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -35,90 +35,49 @@
       <p class="lede">FP&amp;A and financial analysis. I turn sales and financial data into clear answers about revenue, cost and margin.</p>
       <div class="actions">
         <a href="Ali_Haziq_Resume.pdf?v=3" download class="btn">Download resume</a>
-        <a href="#analysis" class="link">See the analysis</a>
+        <a href="power-bi.html" class="btn-outline">Power BI analysis</a>
+        <span class="btn-outline btn-outline--soon" aria-disabled="true">Excel analysis<span class="soon-tag">Coming soon</span></span>
       </div>
     </section>
 
     <section id="analysis" class="section">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Analysis</p>
-          <h2 class="title">Financial and sales analysis.</h2>
+          <p class="section-num">01</p>
+          <h2 class="section-name">Analysis</h2>
+          <p class="section-sub">Financial and sales analysis, each shown with the work behind it.</p>
         </header>
-
-        <article class="project reveal">
-          <a href="power-bi.html" class="project-media project-media--shot" tabindex="-1" aria-hidden="true">
-            <img src="powerbi/05-profit-category.png" alt="" loading="lazy">
-          </a>
-          <div>
-            <p class="eyebrow">Power BI · INFO 3402</p>
-            <h3 class="title"><a href="power-bi.html">Retail sales and profit</a></h3>
-            <p class="prose">Four years of multi-currency retail sales, modelled as a star schema and used to answer nine business questions on revenue, profit, delivery and customer segments.</p>
-            <dl class="spec">
-              <div><dt>Covers</dt><dd>Revenue · Profit · Monthly trends · Store and category performance · Customer segments</dd></div>
-              <div><dt>Methods</dt><dd>Star schema · DAX measures · Currency conversion · Outlier handling</dd></div>
-            </dl>
-            <a href="power-bi.html" class="link">See the analysis</a>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <div class="project-media project-media--soon" aria-hidden="true">
-            <span class="soon-mark">Kozi Loft</span>
-          </div>
-          <div>
-            <p class="eyebrow">Excel · Coming soon</p>
-            <h3 class="title">Kozi Loft pricing, margin and forecast</h3>
-            <p class="prose">Pricing and cost analysis for a real furniture store: how each product was priced, margins by category, and a sales forecast with base, upside and downside cases.</p>
-          </div>
-        </article>
+        <ul class="skill-list reveal">
+          <li>
+            <a href="power-bi.html" class="skill-row analysis-row">
+              <div>
+                <p class="tool">Power BI</p>
+                <h3 class="heading">Retail sales and profit</h3>
+              </div>
+              <p class="prose">Four years of multi-currency retail sales, modelled as a star schema and used to answer nine questions on revenue, profit, delivery and customer segments.</p>
+              <span class="btn-outline">Open analysis</span>
+            </a>
+          </li>
+          <li>
+            <div class="skill-row analysis-row analysis-row--soon">
+              <div>
+                <p class="tool">Excel</p>
+                <h3 class="heading">Pricing, margin and forecast</h3>
+              </div>
+              <p class="prose">Pricing and cost analysis for a real furniture store: how each product was priced, margins by category, and a sales forecast with base, upside and downside cases.</p>
+              <span class="btn-outline btn-outline--soon">Coming soon</span>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="work" class="section">
+    <section id="projects" class="section section--surface">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Websites</p>
-          <h2 class="title">Sites I've designed and built.</h2>
-        </header>
-
-        <article class="project reveal">
-          <a href="https://koziloft.com" target="_blank" rel="noopener" class="project-media project-media--shot" tabindex="-1" aria-hidden="true">
-            <img src="sites/koziloft.png" alt="" loading="lazy">
-          </a>
-          <div>
-            <p class="eyebrow">Furniture store · 2026</p>
-            <h3 class="title"><a href="https://koziloft.com" target="_blank" rel="noopener">Kozi Loft</a></h3>
-            <p class="prose">An online store for solid wood tables, desks and chairs, with a dining set configurator, checkout on the page, and an admin panel for managing listings.</p>
-            <dl class="spec">
-              <div><dt>Stack</dt><dd>Eleventy · Netlify Functions · Stripe</dd></div>
-            </dl>
-            <a href="https://koziloft.com" target="_blank" rel="noopener" class="link">Visit koziloft.com</a>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <a href="https://1st-bond.com" target="_blank" rel="noopener" class="project-media project-media--shot" tabindex="-1" aria-hidden="true">
-            <img src="sites/1stbond.png" alt="" loading="lazy">
-          </a>
-          <div>
-            <p class="eyebrow">App website · 2026</p>
-            <h3 class="title"><a href="https://1st-bond.com" target="_blank" rel="noopener">1STBOND</a></h3>
-            <p class="prose">The website for an identity-verified meetup app, with product, pricing and account pages. Serverless functions handle the contact form with rate limiting and log sign-in events for security monitoring.</p>
-            <dl class="spec">
-              <div><dt>Stack</dt><dd>HTML · CSS · JavaScript · Netlify Functions · Supabase</dd></div>
-            </dl>
-            <a href="https://1st-bond.com" target="_blank" rel="noopener" class="link">Visit 1st-bond.com</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="eyebrow">Other projects</p>
-          <h2 class="title">University team projects.</h2>
+          <p class="section-num">02</p>
+          <h2 class="section-name">Projects</h2>
+          <p class="section-sub">University team projects from my Information Science degree.</p>
         </header>
         <ul class="skill-list reveal">
           <li>
@@ -136,16 +95,20 @@
             </a>
           </li>
         </ul>
+        <div class="actions section-more">
+          <a href="personal-projects.html" class="btn-outline">See my personal projects</a>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="section section--surface">
+    <section id="about" class="section">
       <div class="container">
         <div class="about-grid reveal">
-          <div>
-            <p class="eyebrow">About</p>
-            <h2 class="title">Finance questions, answered with data.</h2>
-          </div>
+          <header class="section-head">
+            <p class="section-num">03</p>
+            <h2 class="section-name">About</h2>
+            <p class="section-sub">Finance questions, answered with data.</p>
+          </header>
           <dl class="spec">
             <div><dt>Analysis</dt><dd>Excel · Power BI · DAX · SQL · Data modelling · Data analysis</dd></div>
             <div><dt>Development</dt><dd>HTML · CSS · JavaScript · React · React Native · FastAPI · SQLite</dd></div>
@@ -157,11 +120,12 @@
       </div>
     </section>
 
-    <section id="resume" class="section">
+    <section id="resume" class="section section--surface">
       <div class="container">
         <header class="section-head reveal">
-          <p class="eyebrow">Resume</p>
-          <h2 class="title">Experience and education.</h2>
+          <p class="section-num">04</p>
+          <h2 class="section-name">Resume</h2>
+          <p class="section-sub">Experience and education.</p>
         </header>
         <iframe class="resume-frame" src="Ali_Haziq_Resume.pdf?v=3" title="Haziq Ali resume"></iframe>
         <div class="actions">
@@ -176,8 +140,11 @@
   <div class="dark">
     <section id="contact" class="section contact">
       <div class="container">
-        <p class="eyebrow">Contact</p>
-        <h2 class="title">Get in touch.</h2>
+        <header class="section-head">
+          <p class="section-num">05</p>
+          <h2 class="section-name">Contact</h2>
+          <p class="section-sub">Get in touch.</p>
+        </header>
         <dl class="spec">
           <div><dt>Email</dt><dd><a href="mailto:ali.haziq@outlook.com">ali.haziq@outlook.com</a></dd></div>
           <div><dt>Phone</dt><dd><a href="tel:+17204728094">720 472 8094</a></dd></div>

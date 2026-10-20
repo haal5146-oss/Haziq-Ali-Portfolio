@@ -129,6 +129,39 @@ a { color: inherit; }
 
 .btn:hover { background: var(--accent); }
 
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: var(--s-2) 32px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: var(--t-ui);
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 200ms var(--ease), color 200ms var(--ease);
+}
+
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-outline--soon,
+.btn-outline--soon:hover {
+  border-style: dashed;
+  border-color: var(--line);
+  color: var(--muted);
+  cursor: default;
+}
+
+.soon-tag {
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .link {
   display: inline-flex;
   align-items: center;
@@ -208,12 +241,41 @@ a { color: inherit; }
 
 /* ---- Sections ---- */
 
-.section { padding: var(--s-7) 0; }
+.section { padding: var(--s-6) 0; }
 .section + .section { border-top: 1px solid var(--line); }
 .section--surface { background: var(--surface); border-top: none !important; }
 .section--surface + .section { border-top: none; }
 
-.section-head { margin-bottom: var(--s-6); }
+.section-head { margin-bottom: var(--s-5); }
+.section-more { margin-top: var(--s-4); }
+.personal-projects { margin-bottom: var(--s-6); }
+
+/* Numbered section heads so each part of the homepage reads at a glance */
+.section-num {
+  margin-bottom: var(--s-1);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+.section-name {
+  font-family: var(--serif);
+  font-size: clamp(2.75rem, 1.6rem + 4vw, 5rem);
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.section-sub {
+  margin-top: var(--s-2);
+  font-family: var(--serif);
+  font-size: var(--t-lede);
+  font-weight: 300;
+  color: var(--muted);
+}
+.about-grid .section-head { margin-bottom: 0; }
+.dark .section-name { color: var(--on-dark); }
+.dark .section-sub { color: var(--on-dark-muted); }
 
 /* ---- Hero ---- */
 
@@ -406,6 +468,73 @@ a { color: inherit; }
 .case-hero .link { margin-bottom: var(--s-5); }
 .case-hero .display { margin-bottom: var(--s-4); }
 
+/* Compact hero on a skill page: the charts come first */
+.case-hero--compact { padding-bottom: var(--s-4); }
+.case-hero--compact .link { margin-bottom: var(--s-4); }
+.case-hero--compact .title { margin: var(--s-1) 0 var(--s-2); }
+
+/* Chart grid: every visual on the page, one click from the top */
+.chart-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--s-4) var(--s-3);
+  margin-bottom: var(--s-6);
+}
+.chart-tile { display: block; text-decoration: none; color: var(--ink); transition: transform 250ms var(--ease); }
+.chart-tile-media {
+  display: block;
+  aspect-ratio: 16 / 10;
+  margin-bottom: var(--s-2);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  position: relative;
+  transition: border-color 250ms var(--ease), box-shadow 250ms var(--ease);
+}
+.chart-tile-media img { width: 100%; height: 100%; object-fit: cover; object-position: top left; transition: transform 400ms var(--ease); }
+.chart-tile-media::after {
+  content: "View finding";
+  position: absolute;
+  right: var(--s-2);
+  bottom: var(--s-2);
+  padding: 6px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 2px;
+  font-family: var(--sans);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 250ms var(--ease), transform 250ms var(--ease);
+}
+.chart-tile-num {
+  display: block;
+  margin-bottom: 4px;
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+.chart-tile-q { font-size: var(--t-ui); line-height: 1.4; transition: color 200ms var(--ease); }
+.chart-tile:hover .chart-tile-q { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.chart-tile:hover,
+.chart-tile:focus-visible { transform: translateY(-6px); }
+.chart-tile:hover .chart-tile-media,
+.chart-tile:focus-visible .chart-tile-media { border-color: var(--accent); box-shadow: 0 14px 32px -18px rgba(20, 20, 18, 0.45); }
+.chart-tile:hover .chart-tile-media img,
+.chart-tile:focus-visible .chart-tile-media img { transform: scale(1.05); }
+.chart-tile:hover .chart-tile-media--video img,
+.chart-tile:focus-visible .chart-tile-media--video img { transform: scale(1.2); }
+.chart-tile:hover .chart-tile-media::after,
+.chart-tile:focus-visible .chart-tile-media::after { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .chart-tile, .chart-tile-media img, .chart-tile-media::after { transition: none; }
+  .chart-tile:hover, .chart-tile:focus-visible { transform: none; }
+}
+
 .case-figure {
   aspect-ratio: 3 / 2;
   max-height: 640px;
@@ -519,6 +648,24 @@ a { color: inherit; }
 .skill-row .prose { margin: 0; }
 .skill-row .eyebrow { margin: 0; text-align: right; }
 
+/* Analysis list: the tool leads each row */
+.analysis-row { align-items: center; padding: var(--s-5) 0; }
+.analysis-row .tool {
+  font-family: var(--serif);
+  font-size: clamp(2.75rem, 1.8rem + 3vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  transition: color 200ms var(--ease);
+}
+.analysis-row .heading { margin-top: var(--s-1); color: var(--ink-soft); }
+.analysis-row .btn-outline { justify-self: end; }
+.analysis-row:hover .tool { color: var(--accent); }
+.analysis-row:hover .btn-outline:not(.btn-outline--soon) { border-color: var(--accent); color: var(--accent); }
+.analysis-row--soon .tool,
+.analysis-row--soon:hover .tool { color: var(--muted); }
+
 /* ---- Contents list on a skill page ---- */
 
 .contents { list-style: none; columns: 2; column-gap: var(--s-5); max-width: none; }
@@ -604,6 +751,7 @@ p.pending { display: block; height: auto; padding: var(--s-2) 0; }
 @media (max-width: 900px) {
   .skill-row { grid-template-columns: 1fr; gap: var(--s-1); }
   .skill-row .eyebrow { text-align: left; }
+  .analysis-row .btn-outline { justify-self: start; margin-top: var(--s-2); }
   .contents { columns: 1; }
 }
 .spec dd.pending { display: block; height: auto; padding: 0.2em 0 0; font-size: var(--t-label); color: var(--muted); }
@@ -620,3 +768,53 @@ main { flex: 1 0 auto; }
 #projects .skill-row { padding: var(--s-3) 0; }
 #projects .skill-row .title { font-size: var(--t-heading); line-height: 1.2; }
 .rows li strong { font-weight: 500; color: var(--ink); }
+.chart-tile-media--video img { object-position: center; transform: scale(1.14); }
+.chart-tile:hover .chart-tile-media--video img { transform: scale(1.2); }
+
+/* ---- Chart pop-ups ---- */
+.has-modals .case-sections { display: none; }
+.case-hero--compact .actions { margin-top: var(--s-3); }
+
+.case-modal {
+  width: min(1040px, 94vw);
+  max-height: 90vh;
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-y: auto;
+}
+.case-modal::backdrop { background: rgba(20, 20, 18, 0.62); }
+.case-modal-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  gap: var(--s-3);
+  padding: var(--s-1) var(--s-4);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.case-modal-bar button { background: none; border: none; padding: 0; cursor: pointer; font-family: var(--sans); }
+.case-modal-bar button[hidden] { display: none; }
+.case-modal-close { margin-left: auto; }
+.case-modal-body { padding: var(--s-4); }
+.case-modal .case-block { display: block; padding: 0; border-top: none; }
+.case-modal .case-block > .eyebrow { margin-bottom: var(--s-1); color: var(--accent); }
+.case-modal .case-block .spec { max-width: none; }
+@media (max-width: 600px) {
+  .case-modal-body { padding: var(--s-3); }
+  .case-modal-bar { padding: var(--s-1) var(--s-3); }
+}
+/* The chart image already carries the question, so the pop-up hides the repeat (kept for screen readers). */
+.case-modal section[id^="q"]:not(#q1) .heading {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.case-modal section[id^="q"]:not(#q1) > .eyebrow { margin-bottom: var(--s-2); }

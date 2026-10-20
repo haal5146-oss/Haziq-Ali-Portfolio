@@ -96,6 +96,18 @@ mistake.
 - **Buttons.** Primary is ink fill, paper text, 2px radius, `16px 32px`. Hover
   shifts the fill to the accent. Quiet is ink text with a 1px underline offset
   4px; hover turns the underline accent. Nothing moves or scales.
+- **Section head (homepage).** Accent `--t-label` number (01, 02...), the
+  section name in large Newsreader 300, then a muted serif line under it.
+  Sections alternate paper and `--surface` so each one has a visible edge.
+- **Skill page.** Compact hero, then a chart grid. Each tile opens its section
+  in a pop-up card (native `<dialog>`, Previous / Next / Close). Without JS the
+  sections stay on the page and tiles jump to them. Tiles are the one place
+  that moves: on hover they lift 6px, the chart zooms slightly and an ink
+  "View finding" tag fades in.
+- **Outline button.** Same size and radius as primary, 1px ink border, no
+  fill. Used for analysis links in the hero so the resume keeps the only fill.
+  Hover turns border and text accent. Coming soon uses a dashed `--line`
+  border, muted text and an uppercase label.
 - **Spec table.** Key in `--t-label` muted, value in `--t-ui` ink, hairline
   between rows, no outer border. Used for project goals, roles and skills.
 - **Project row.** 3:2 image mat on `--surface`, then eyebrow, serif title,
